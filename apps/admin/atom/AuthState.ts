@@ -5,6 +5,7 @@ export const AuthState = atom<AuthAtomType>({
   key: "authState",
   default: {
     isLogined: true,
+    userName: null,
   },
 });
 

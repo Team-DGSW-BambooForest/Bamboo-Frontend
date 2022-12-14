@@ -7,10 +7,7 @@ export interface AuthAtomType {
   userName?: string | null;
 }
 
-export const useLogin = (
-  status: boolean,
-  setAuthState: SetterOrUpdater<AuthAtomType>
-) => {
+export const useLogin = (setAuthState: SetterOrUpdater<AuthAtomType>) => {
   /**
    * 1. form 태그이기에 새로고침을 막기위해 stopReload 사용
    * 2. setAuthState를 통해 로그인 상태 변경
@@ -20,9 +17,7 @@ export const useLogin = (
    */
   const loginRequest = (event: FormEvent) => {
     stopReload(event);
-    setAuthState(
-      !status ? { isLogined: true, userName: "강성훈" } : { isLogined: true }
-    );
+    setAuthState({ isLogined: true, userName: "강성훈" });
   };
   return { loginRequest };
 };

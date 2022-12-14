@@ -13,7 +13,7 @@ const Login = () => {
   /**
    * 로그인 관련 로직
    */
-  const { loginRequest } = useLogin(false, setAuthState);
+  const { loginRequest } = useLogin(setAuthState);
 
   return (
     <form
