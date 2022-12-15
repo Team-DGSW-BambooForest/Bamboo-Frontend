@@ -12,8 +12,16 @@ const Login = () => {
   const router = useRouter();
   /**
    * 로그인 관련 로직
+   * request 함수 외부로 분리, axios 및 react-query
    */
-  const { loginRequest } = useLogin(setAuthState);
+  const request = async () => {
+    await new Promise((resolve, reject) => {});
+    return {
+      userName: "abc",
+    };
+  };
+
+  const { loginRequest } = useLogin(setAuthState, request);
 
   return (
     <form

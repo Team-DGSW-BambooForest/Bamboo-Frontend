@@ -13,7 +13,14 @@ const Login = () => {
   /**
    * 로그인 관련 로직
    */
-  const { loginRequest } = useLogin(setAuthState);
+  const request = async () => {
+    await new Promise((resolve, reject) => {});
+    return {
+      userName: "abc",
+    };
+  };
+
+  const { loginRequest } = useLogin(setAuthState, request);
 
   return (
     <form
